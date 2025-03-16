@@ -381,10 +381,9 @@ string Decrypt(const string &ciphertext, const CryptoPP::SecByteBlock &key, cons
 
 int main()
 {
-
-#ifdef _WIN32
-    SetConsoleOutputCP(CP_UTF8);
-#endif
+    #ifdef _WIN32
+        SetConsoleOutputCP(CP_UTF8);
+    #endif
 
     try
     {
