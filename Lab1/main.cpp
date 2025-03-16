@@ -453,7 +453,7 @@ int main()
         else
         {
             string textFile;
-            cout << "Enter plaintext file name: ";
+            cout << "Enter path to plaintext file: ";
             cin >> textFile;
             plaintext = ReadFromFile(textFile);
         }
