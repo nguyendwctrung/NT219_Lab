@@ -4,6 +4,8 @@
 #include <string>
 #include <stdexcept>
 #include <cstring>
+#include <windows.h>
+#include <fcntl.h>
 
 #include <cryptopp/cryptlib.h>
 #include <cryptopp/aes.h>
@@ -379,6 +381,10 @@ string Decrypt(const string &ciphertext, const CryptoPP::SecByteBlock &key, cons
 
 int main()
 {
+    #ifdef _WIN32
+        SetConsoleOutputCP(CP_UTF8);
+    #endif
+
     try
     {
         int algoChoice, modeChoice;
