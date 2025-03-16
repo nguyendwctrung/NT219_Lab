@@ -6,6 +6,7 @@
 #include <cstring>
 #include <windows.h>
 #include <fcntl.h>
+#include <chrono>
 
 #include <cryptopp/cryptlib.h>
 #include <cryptopp/aes.h>
@@ -381,9 +382,9 @@ string Decrypt(const string &ciphertext, const CryptoPP::SecByteBlock &key, cons
 
 int main()
 {
-    #ifdef _WIN32
-        SetConsoleOutputCP(CP_UTF8);
-    #endif
+#ifdef _WIN32
+    SetConsoleOutputCP(CP_UTF8);
+#endif
 
     try
     {
@@ -458,7 +459,11 @@ int main()
         }
 
         // Encrypt plaintext
+        auto startEncrypt = std::chrono::steady_clock::now();
         string cipher = Encrypt(plaintext, key, iv, algo, modeChoice);
+        auto endEncrypt = std::chrono::steady_clock::now();
+        auto encryptDuration = std::chrono::duration_cast<std::chrono::microseconds>(endEncrypt - startEncrypt).count();
+        cout << "\nEncryption time: " << encryptDuration << " microseconds" << endl;
 
         // Output encoding choice: hex or Base64
         int encodeChoice;
@@ -487,7 +492,11 @@ int main()
         cin >> decryptChoice;
         if (decryptChoice == 'y' || decryptChoice == 'Y')
         {
+            auto startDecrypt = std::chrono::steady_clock::now();
             string decrypted = Decrypt(cipher, key, iv, algo, modeChoice);
+            auto endDecrypt = std::chrono::steady_clock::now();
+            auto decryptDuration = std::chrono::duration_cast<std::chrono::microseconds>(endDecrypt - startDecrypt).count();
+            cout << "\nDecryption time: " << decryptDuration << " microseconds" << endl;
             cout << "\nDecrypted text:\n"
                  << decrypted << endl;
         }
