@@ -38,3 +38,45 @@ static const uint8_t inv_sbox[256] = {
     0x17, 0x2b, 0x04, 0x7e, 0xba, 0x77, 0xd6, 0x26, 0xe1, 0x69, 0x14, 0x63, 0x55, 0x21, 0x0c, 0x7d
 };
 
+AES::AES(const std::vector<uint8_t>& key)
+{
+    keyExpansion(key);
+}
+
+AES::~AES()
+{
+}
+
+void AES::encryptBlock(uint8_t input[16], uint8_t output[16])
+{
+    uint8_t state[4][4];
+    for (int i = 0; i < 4; i++)
+    {
+        for (int j = 0; j < 4; j++)
+        {
+            state[j][i] = input[i * 4 + j];
+        }
+    }
+
+    addRoundKey(state, 0);
+
+    for (int round = 1; round < 10; round++)
+    {
+        subBytes(state);
+        shiftRows(state);
+        mixColumns(state);
+        addRoundKey(state, round);
+    }
+
+    subBytes(state);
+    shiftRows(state);
+    addRoundKey(state, 10);
+
+    for (int i = 0; i < 4; i++)
+    {
+        for (int j = 0; j < 4; j++)
+        {
+            output[i * 4 + j] = state[j][i];
+        }
+    }
+}
