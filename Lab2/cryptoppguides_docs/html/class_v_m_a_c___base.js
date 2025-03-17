@@ -1,0 +1,25 @@
+var class_v_m_a_c___base =
+[
+    [ "AlgorithmName", "class_v_m_a_c___base.html#a7841e62a2fb45594c971117a647f1c81", null ],
+    [ "AlgorithmName", "class_v_m_a_c___base.html#a7841e62a2fb45594c971117a647f1c81", null ],
+    [ "AlgorithmProvider", "class_v_m_a_c___base.html#a4e7e1308e021be896b15973ba9264626", null ],
+    [ "AlgorithmProvider", "class_v_m_a_c___base.html#a4e7e1308e021be896b15973ba9264626", null ],
+    [ "BlockSize", "class_v_m_a_c___base.html#a3787b7950bd0eefb4f4accafd969430a", null ],
+    [ "BlockSize", "class_v_m_a_c___base.html#a3787b7950bd0eefb4f4accafd969430a", null ],
+    [ "DigestSize", "class_v_m_a_c___base.html#ade8dd31d4ca07f9668afc1ab9eb3ea55", null ],
+    [ "DigestSize", "class_v_m_a_c___base.html#ade8dd31d4ca07f9668afc1ab9eb3ea55", null ],
+    [ "GetNextIV", "class_v_m_a_c___base.html#abd5685ab3eaf6ec272f7e062c3194c6c", null ],
+    [ "GetNextIV", "class_v_m_a_c___base.html#abd5685ab3eaf6ec272f7e062c3194c6c", null ],
+    [ "IVSize", "class_v_m_a_c___base.html#a866c80e36ce0279f10329f261221249b", null ],
+    [ "IVSize", "class_v_m_a_c___base.html#a866c80e36ce0279f10329f261221249b", null ],
+    [ "MinIVLength", "class_v_m_a_c___base.html#ae75868ac0ea31bd3a0090159e19128fd", null ],
+    [ "MinIVLength", "class_v_m_a_c___base.html#ae75868ac0ea31bd3a0090159e19128fd", null ],
+    [ "OptimalDataAlignment", "class_v_m_a_c___base.html#a3cf0e0e3edb2e9a5bd255a472bf9154f", null ],
+    [ "OptimalDataAlignment", "class_v_m_a_c___base.html#a3cf0e0e3edb2e9a5bd255a472bf9154f", null ],
+    [ "Resynchronize", "class_v_m_a_c___base.html#a986931f6b6e892e353dec13fb9f8542d", null ],
+    [ "Resynchronize", "class_v_m_a_c___base.html#a986931f6b6e892e353dec13fb9f8542d", null ],
+    [ "TruncatedFinal", "class_v_m_a_c___base.html#a3affbeda9ead9b9b1e93064acc44c858", null ],
+    [ "TruncatedFinal", "class_v_m_a_c___base.html#a3affbeda9ead9b9b1e93064acc44c858", null ],
+    [ "UncheckedSetKey", "class_v_m_a_c___base.html#a406571c5e79b2188f946ad5ac610a16b", null ],
+    [ "UncheckedSetKey", "class_v_m_a_c___base.html#aaf0954326492fcc6059ac4f1903f5f09", null ]
+];

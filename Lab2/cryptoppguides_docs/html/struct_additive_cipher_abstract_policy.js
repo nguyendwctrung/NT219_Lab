@@ -1,0 +1,27 @@
+var struct_additive_cipher_abstract_policy =
+[
+    [ "AlgorithmProvider", "struct_additive_cipher_abstract_policy.html#a12e9d2de7e86cf0e7541ecaa485ca9c7", null ],
+    [ "AlgorithmProvider", "struct_additive_cipher_abstract_policy.html#a12e9d2de7e86cf0e7541ecaa485ca9c7", null ],
+    [ "CanOperateKeystream", "struct_additive_cipher_abstract_policy.html#a02d1a81c11cf52ed48a5c10357a39717", null ],
+    [ "CanOperateKeystream", "struct_additive_cipher_abstract_policy.html#a02d1a81c11cf52ed48a5c10357a39717", null ],
+    [ "CipherIsRandomAccess", "struct_additive_cipher_abstract_policy.html#abdac73ff69a1b36d32871c110f28413a", null ],
+    [ "CipherIsRandomAccess", "struct_additive_cipher_abstract_policy.html#abdac73ff69a1b36d32871c110f28413a", null ],
+    [ "CipherResynchronize", "struct_additive_cipher_abstract_policy.html#ae00639d9aeb20b7da3ac5e3a0f877fa0", null ],
+    [ "CipherResynchronize", "struct_additive_cipher_abstract_policy.html#ae00639d9aeb20b7da3ac5e3a0f877fa0", null ],
+    [ "CipherSetKey", "struct_additive_cipher_abstract_policy.html#a906b4001cc8c457d1abb4bff4fb8157a", null ],
+    [ "CipherSetKey", "struct_additive_cipher_abstract_policy.html#a906b4001cc8c457d1abb4bff4fb8157a", null ],
+    [ "GetAlignment", "struct_additive_cipher_abstract_policy.html#a156c179304f2a5d119f74806b5b263ec", null ],
+    [ "GetAlignment", "struct_additive_cipher_abstract_policy.html#a156c179304f2a5d119f74806b5b263ec", null ],
+    [ "GetBytesPerIteration", "struct_additive_cipher_abstract_policy.html#a573f7abcf5929be546bddc32139bf370", null ],
+    [ "GetBytesPerIteration", "struct_additive_cipher_abstract_policy.html#a573f7abcf5929be546bddc32139bf370", null ],
+    [ "GetIterationsToBuffer", "struct_additive_cipher_abstract_policy.html#aa2267beddbc4140e92c78206a24ead0c", null ],
+    [ "GetIterationsToBuffer", "struct_additive_cipher_abstract_policy.html#aa2267beddbc4140e92c78206a24ead0c", null ],
+    [ "GetOptimalBlockSize", "struct_additive_cipher_abstract_policy.html#a32bbafa12b59e77d4d8bc67e9d5a4004", null ],
+    [ "GetOptimalBlockSize", "struct_additive_cipher_abstract_policy.html#a32bbafa12b59e77d4d8bc67e9d5a4004", null ],
+    [ "OperateKeystream", "struct_additive_cipher_abstract_policy.html#ae948f2e69229ba39837e498a464606d4", null ],
+    [ "OperateKeystream", "struct_additive_cipher_abstract_policy.html#ae948f2e69229ba39837e498a464606d4", null ],
+    [ "SeekToIteration", "struct_additive_cipher_abstract_policy.html#a8fce38d2b7d84732fc3efea410b82d54", null ],
+    [ "SeekToIteration", "struct_additive_cipher_abstract_policy.html#a8fce38d2b7d84732fc3efea410b82d54", null ],
+    [ "WriteKeystream", "struct_additive_cipher_abstract_policy.html#aea8268ee42cbc98cf9be638bf77aafef", null ],
+    [ "WriteKeystream", "struct_additive_cipher_abstract_policy.html#aea8268ee42cbc98cf9be638bf77aafef", null ]
+];
