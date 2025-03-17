@@ -382,6 +382,7 @@ string Decrypt(const string &ciphertext, const CryptoPP::SecByteBlock &key, cons
 
 int main()
 {
+    auto startProgram = std::chrono::steady_clock::now();
 #ifdef _WIN32
     SetConsoleOutputCP(CP_UTF8);
 #endif
@@ -505,5 +506,8 @@ int main()
     {
         cerr << "Error: " << ex.what() << endl;
     }
+    auto endProgram = std::chrono::steady_clock::now();
+    auto programDuration = std::chrono::duration_cast<std::chrono::milliseconds>(endProgram - startProgram).count();
+    cout << "\nProgram duration: " << programDuration << " milliseconds" << endl;
     return 0;
 }
