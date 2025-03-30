@@ -35,6 +35,8 @@ const uint8_t rcon[10][4] = {
 
 KeyExpansion::KeyExpansion(const std::vector<uint8_t> &key) : key(key) {}
 
+KeyExpansion::~KeyExpansion() {}
+
 std::vector<uint8_t> KeyExpansion::subWord(const std::vector<uint8_t> &word)
 {
     std::vector<uint8_t> result(4);
