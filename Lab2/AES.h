@@ -3,38 +3,41 @@
 #include <string>
 #include <vector>
 #include <cstdint>
+#include <stdexcept>
 
 class AES
 {
 private:
-    // Expand the key into round keys
-    void keyExpansion(const std::vector<uint8_t>& key, std::vector<uint8_t>& roundKeys);
+    std::vector<uint8_t> key;
+    int key_length;
+    std::vector<std::vector<uint8_t>> round_keys;
 
-    // Add the round key to the state
-    void addRoundKey(uint8_t state[4][4], int round);
+    static const uint8_t sbox[256];     // S-box for AES
+    static const uint8_t inv_sbox[256]; // Inverse S-box for AES
 
-    // Combine transformation during encryption
-    void subBytes(uint8_t state[4][4]);
-    void shiftRows(uint8_t state[4][4]);
-    void mixColumns(uint8_t state[4][4]);
+    static const std::vector<std::vector<uint8_t>> rcon; // Round constants for AES
 
-    // Combine transformation during decryption
-    void invSubBytes(uint8_t state[4][4]);
-    void invShiftRows(uint8_t state[4][4]);
-    void invMixColumns(uint8_t state[4][4]);
+    std::vector<uint8_t> sub_word(const std::vector<uint8_t> &word);
+    std::vector<uint8_t> rot_word(const std::vector<uint8_t> &word);
 
-    // Helper functions used in mixColumns
-    static uint8_t xtime(uint8_t x);
-    static uint8_t multiply(uint8_t a, uint8_t b);
+    std::vector<std::vector<uint8_t>> key_expansion(const std::vector<uint8_t> &key, int length);
+    std::vector<std::vector<uint8_t>> key_expansion_128();
+    std::vector<std::vector<uint8_t>> key_expansion_192();
+    std::vector<std::vector<uint8_t>> key_expansion_256();
 
-    // The expand round keys (176 bytes for AES-128)
-    std::vector<uint8_t> roundKeys;
+    std::vector<std::vector<uint8_t>> sub_bytes(std::vector<std::vector<uint8_t>> &state);
+    std::vector<std::vector<uint8_t>> shift_rows(std::vector<std::vector<uint8_t>> &state);
+    std::vector<std::vector<uint8_t>> mix_columns(std::vector<std::vector<uint8_t>> &state);
+    std::vector<std::vector<uint8_t>> add_round_key(std::vector<std::vector<uint8_t>> &state, int roundNumber);
+
+    std::vector<std::vector<uint8_t>> inv_sub_bytes(std::vector<std::vector<uint8_t>> &state);
+    std::vector<std::vector<uint8_t>> inv_shift_rows(std::vector<std::vector<uint8_t>> &state);
+    std::vector<std::vector<uint8_t>> inv_mix_columns(std::vector<std::vector<uint8_t>> &state);
+
+    uint8_t gmul(uint8_t a, uint8_t b);
+
 public:
-    // AES expects a 16-byte key for AES-128
-    AES(const std::vector<uint8_t>& key);
-    ~AES();
-
-    // Encrypt and decrypt a block of 16 bytes
-    void encryptBlock(uint8_t input[16], uint8_t output[16]);
-    void decryptBlock(uint8_t input[16], uint8_t output[16]);
+    AES(const std::vector<uint8_t> &key, int key_length);
+    std::vector<uint8_t> encrypt(const std::vector<uint8_t> &plaintext);
+    std::vector<uint8_t> decrypt(const std::vector<uint8_t> &ciphertext);
 };

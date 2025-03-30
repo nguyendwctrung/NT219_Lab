@@ -55,7 +55,7 @@ std::vector<uint8_t> rotWord(const std::vector<uint8_t> &word)
 }
 
 // Gen 10 round keys for AES-128: (44 words x 32 bits)/128 =11 keys)
-std::vector<uint8_t> KeyExpansion::KeyExpansion128(const std::vector<uint8_t> &key)
+std::vector<std::vector<uint8_t>> KeyExpansion::KeyExpansion128(const std::vector<uint8_t> &key)
 {
     int key_size = 16; // Note: length of the key
     int key_words = 4; // Note: key_size / 4
@@ -86,10 +86,11 @@ std::vector<uint8_t> KeyExpansion::KeyExpansion128(const std::vector<uint8_t> &k
         }
         round_keys.push_back(new_word);
     }
+    return round_keys;
 }
 
 // Gen 12 round keys for AES-192: (52 words x 32 bits)/128 =13 keys)
-std::vector<uint8_t> KeyExpansion::KeyExpansion192(const std::vector<uint8_t> &key)
+std::vector<std::vector<uint8_t>> KeyExpansion::KeyExpansion192(const std::vector<uint8_t> &key)
 {
     std::vector<std::vector<uint8_t>> round_keys;
     for (int i = 0; i < 24; i += 4)
@@ -116,10 +117,11 @@ std::vector<uint8_t> KeyExpansion::KeyExpansion192(const std::vector<uint8_t> &k
         }
         round_keys.push_back(new_word);
     }
+    return round_keys;
 }
 
 // Gen 14 round keys for AES-256: (60 words x 32 bits)/128 =15 keys)
-std::vector<uint8_t> KeyExpansion::KeyExpansion256(const std::vector<uint8_t> &key)
+std::vector<std::vector<uint8_t>> KeyExpansion::KeyExpansion256(const std::vector<uint8_t> &key)
 {
     std::vector<std::vector<uint8_t>> round_keys;
     for (int i = 0; i < 32; i += 4)
@@ -150,4 +152,5 @@ std::vector<uint8_t> KeyExpansion::KeyExpansion256(const std::vector<uint8_t> &k
         }
         round_keys.push_back(new_word);
     }
+    return round_keys;
 }
