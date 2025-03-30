@@ -8,7 +8,7 @@ class AES
 {
 private:
     // Expand the key into round keys
-    void keyExpansion(const std::vector<uint8_t>& key);
+    void keyExpansion(const std::vector<uint8_t>& key, std::vector<uint8_t>& roundKeys);
 
     // Add the round key to the state
     void addRoundKey(uint8_t state[4][4], int round);
@@ -28,7 +28,7 @@ private:
     static uint8_t multiply(uint8_t a, uint8_t b);
 
     // The expand round keys (176 bytes for AES-128)
-    uint8_t roundKeys[176];
+    std::vector<uint8_t> roundKeys;
 public:
     // AES expects a 16-byte key for AES-128
     AES(const std::vector<uint8_t>& key);
