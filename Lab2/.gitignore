@@ -1,0 +1,109 @@
+# ========================================
+# Gitignore cho CLion + C++ (CMake, Conan, vcpkg)
+# ========================================
+
+### IDE Settings (JetBrains CLion, IntelliJ...) ###
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/**/usage.statistics.xml
+.idea/**/dictionaries
+.idea/**/shelf
+.idea/**/aws.xml
+.idea/**/contentModel.xml
+.idea/**/dataSources/
+.idea/**/dataSources.ids
+.idea/**/dataSources.local.xml
+.idea/**/sqlDataSources.xml
+.idea/**/dynamic.xml
+.idea/**/uiDesigner.xml
+.idea/**/dbnavigator.xml
+.idea/**/gradle.xml
+.idea/**/libraries
+.idea/**/mongoSettings.xml
+.idea/**/sonarlint/
+.idea/**/sonarIssues.xml
+.idea/**/markdown-navigator.xml
+.idea/**/markdown-navigator-enh.xml
+.idea/**/markdown-navigator/
+.idea/$CACHE_FILE$
+.idea/codestream.xml
+.idea/**/azureSettings.xml
+
+# Các file module IntelliJ
+.idea_modules/
+*.iml
+*.iws
+*.ipr
+
+
+# Các yêu cầu HTTP của JetBrains IDE
+.idea/httpRequests
+
+# Android Studio cache
+.idea/caches/build_file_checksums.ser
+
+# Crashlytics plugin
+com_crashlytics_export_strings.xml
+crashlytics.properties
+crashlytics-build.properties
+fabric.properties
+
+# JIRA plugin
+atlassian-ide-plugin.xml
+
+# Cursive Clojure plugin
+.idea/replstate.xml
+
+---
+
+### Build files (CMake, Make, build system) ###
+cmake-build-*/
+build/
+out/
+
+CMakeFiles/
+CMakeCache.txt
+Makefile
+cmake_install.cmake
+CTestTestfile.cmake
+install_manifest.txt
+
+# Các file biên dịch C++
+*.o
+*.obj
+*.so
+*.dll
+*.dylib
+*.exe
+*.out
+*.app
+
+
+### Conan package manager ###
+conan.lock
+conanbuildinfo.cmake
+conanbuildinfo.txt
+conaninfo.txt
+graph_info.json
+*.conan/
+conanfile.pyc
+conanfile.txt~
+conanfile.py~
+
+
+### vcpkg package manager ###
+vcpkg_installed/
+vcpkg_buildtrees/
+vcpkg_downloads/
+vcpkg_packages/
+vcpkg_cache/
+
+
+### Temporary, system and log files ###
+*.log
+*.tmp
+*~
+*.swp
+*.DS_Store
+Thumbs.db
+core.*
