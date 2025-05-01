@@ -35,7 +35,6 @@
 *.iws
 *.ipr
 
-
 # Các yêu cầu HTTP của JetBrains IDE
 .idea/httpRequests
 
@@ -78,7 +77,6 @@ install_manifest.txt
 *.out
 *.app
 
-
 ### Conan package manager ###
 conan.lock
 conanbuildinfo.cmake
@@ -90,14 +88,12 @@ conanfile.pyc
 conanfile.txt~
 conanfile.py~
 
-
 ### vcpkg package manager ###
 vcpkg_installed/
 vcpkg_buildtrees/
 vcpkg_downloads/
 vcpkg_packages/
 vcpkg_cache/
-
 
 ### Temporary, system and log files ###
 *.log
@@ -107,3 +103,9 @@ vcpkg_cache/
 *.DS_Store
 Thumbs.db
 core.*
+
+### Bỏ qua thêm theo yêu cầu ###
+.vscode/
+CMakeLists.txt
+include/
+lib/
