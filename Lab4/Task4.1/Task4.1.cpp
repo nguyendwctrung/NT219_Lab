@@ -314,7 +314,7 @@ int main() {
     string fileName;
     int shakeDigestLength = 0;
 
-    cout << "Choose input method:\n1. Input from screen\n2. Input from file\n3. Test performance\nMethod: ";
+    cout << "Choose input method:\n1. Input from screen\n2. Input from file\n3. Test performance\n4. Exit\n";
     if (!(cin >> choice)) {
         cerr << "Invalid input! Please enter a number." << endl;
         return EXIT_FAILURE;
@@ -333,6 +333,9 @@ int main() {
             break;
         case 3:
             PerformanceTest();
+            return 0;
+        case 4:
+            cout << "Exiting the program..." << endl;
             return 0;
         default:
             cerr << "Invalid method!" << endl;
