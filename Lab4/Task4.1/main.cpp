@@ -223,7 +223,8 @@ void PerformanceTest() {
     try {
         string type[10] = {"SHA224", "SHA256", "SHA384", "SHA512", "SHA3-224", 
                            "SHA3-256", "SHA3-384", "SHA3-512", "SHAKE128", "SHAKE256"};
-        vector<size_t> inputSizes = {1024, 10 * 1024, 100 * 1024, 500 * 1024, 1024 * 1024, 5 * 1024 * 1024};
+        vector<size_t> inputSizes = {1024 * 1024, 10 * 1024 * 1024, 100 * 1024 * 1024, 500 * 1024 * 1024,
+                                    1024 * 1024 * 1024, 2 * 1024 * 1024 * 1024ULL};
         vector<string> randomStrings;
         const int nums_run = 100;
 
@@ -239,14 +240,14 @@ void PerformanceTest() {
             throw runtime_error("Unable to open performance_results.txt");
         }
 
-        cout << left << setw(15) << "Input Size (KB)"<< setw(15) << "OS";
+        cout << left << setw(15) << "Input Size (MB)"<< setw(15) << "OS";
         for (const auto& hashType : type) {
             cout << setw(10) << hashType;
         }
         cout << endl;
         cout << string(15 + 15 + 10 * 10, '-') << endl;
         
-        outfile << left << setw(15) << "Input Size (KB)" << setw(15) << "OS";
+        outfile << left << setw(15) << "Input Size (MB)" << setw(15) << "OS";
         for (const auto& hashType : type) {
             outfile << setw(10) << hashType;
         }
@@ -260,7 +261,7 @@ void PerformanceTest() {
         mutex mtx;
 
         for (size_t s = 0; s < randomStrings.size(); s++) {
-            double size_in_kb = inputSizes[s] / 1024.0;
+            double size_in_mb = inputSizes[s] / (1024.0 * 1024);
 
             vector<double> avg_time(10, 0.0);
             vector<thread> threads;
@@ -280,14 +281,14 @@ void PerformanceTest() {
             }
             
             cout << fixed << setprecision(2);
-            cout << left << setw(15) << size_in_kb << setw(15) << osName;
+            cout << left << setw(15) << static_cast<int>(size_in_mb) << setw(15) << osName;
             for (double time : avg_time) {
                 cout << setw(10) << time;
             }               
             cout << endl;
 
             outfile << fixed << setprecision(2);
-            outfile << left << setw(15) << size_in_kb << setw(15) << osName;
+            outfile << left << setw(15) << static_cast<int>(size_in_mb) << setw(15) << osName;
             for (double time : avg_time) {
                 outfile << setw(10) << time;
             }                      
